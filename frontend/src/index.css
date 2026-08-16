@@ -1004,9 +1004,12 @@ img, svg, canvas, video {
 /* 1. Ultra-Wide & Desktop (>= 1025px) */
 @media (min-width: 1025px) {
   .container { width: min(1200px, 90vw); }
-  .floating, .antigravity {
-    animation: antigravity 6s ease-in-out infinite;
-  }
+}
+
+/* Global Animation Override — Completely Remove Layout-Shifting Antigravity Animations */
+.floating, .antigravity, [class*="float"], [class*="levitate"] {
+  animation: none !important;
+  transform: none !important;
 }
 
 /* 2. Small Laptop / Tablet (769px - 1024px) */
@@ -1027,7 +1030,7 @@ img, svg, canvas, video {
 @media (min-width: 481px) and (max-width: 768px) {
   .hero { flex-direction: column; padding: 30px 16px !important; }
   .hero-text h1 { font-size: 32px !important; }
-  .grid-2, .grid-3 { grid-template-columns: repeat(2, 1fr) !important; }
+  .grid-2, .grid-3, .contact-cards-grid { grid-template-columns: 1fr !important; }
   .card, .project-card { padding: 18px !important; }
   .floating { animation-duration: 4s !important; }
 }
@@ -1071,13 +1074,18 @@ img, svg, canvas, video {
   }
   .hero-stats { grid-template-columns: repeat(2, 1fr) !important; gap: 10px; }
   
-  .grid, .projects-grid, .skills-grid, .grid-2, .grid-3 {
+  .grid, 
+  .projects-grid, 
+  .skills-grid, 
+  .grid-2, 
+  .grid-3, 
+  .contact-grid, 
+  .contact-cards-grid, 
+  .profiles-grid, 
+  .about-highlights-grid {
     grid-template-columns: 1fr !important;
-    gap: 12px !important;
+    gap: 14px !important;
   }
-  .contact-cards-grid { grid-template-columns: 1fr !important; }
-  .profiles-grid { grid-template-columns: 1fr !important; }
-  .about-highlights-grid { grid-template-columns: 1fr !important; }
   
   form input, form textarea, form select {
     width: 100% !important;
