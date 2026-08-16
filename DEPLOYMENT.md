@@ -1,6 +1,6 @@
 # 🚀 Mathavan's Portfolio — Netlify Deployment
 
-> 🌐 **Official Live Website URL**: **[https://mathavanportfolioofficial.netlify.app/](https://mathavanportfolioofficial.netlify.app/)**
+> 🌐 **Official Live Website URL**: **[https://mathavanportfoliobasic.netlify.app/](https://mathavanportfoliobasic.netlify.app/)**
 
 Your portfolio website is **100% prepared for Netlify deployment** with Vite configuration, custom asset routing, and SPA client-side fallback redirects!
 
