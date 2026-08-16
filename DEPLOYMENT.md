@@ -1,53 +1,60 @@
-# 🚀 Deploying Mathavan's Portfolio to Vercel
+# 🚀 Deploying Mathavan's Portfolio to Netlify
 
-Your portfolio website is 100% prepared for **Vercel** deployment with Vite configuration, custom asset routing, and optimized builds!
+Your portfolio website is **100% prepared for Netlify deployment** with Vite configuration, custom asset routing, and SPA client-side fallback redirects!
 
 ---
 
-## ⚡ Option 1: Deploy via GitHub (Recommended — Automatic Updates)
+## ⚡ Option 1: Drag & Drop (Fastest — 10 Seconds, No GitHub setup needed)
 
-1. **Push your code to GitHub**:
+1. Run the build command in your terminal:
+   ```bash
+   npm run build
+   ```
+2. Go to **[app.netlify.com/drop](https://app.netlify.com/drop)** in your browser.
+3. Drag and drop the **`dist`** folder from `portfolio 4` directly onto the Netlify webpage!
+4. Your website is instantly live with a Netlify URL! 🎉
+
+---
+
+## ⚡ Option 2: Deploy via GitHub (Automatic Updates)
+
+1. **Push all recent changes to GitHub**:
    ```bash
    git add .
-   git commit -m "Deploy Mathavan's portfolio to Vercel"
+   git commit -m "Add Netlify configuration"
    git push origin main
    ```
 
-2. **Connect to Vercel**:
-   - Go to [vercel.com/new](https://vercel.com/new) and log in with your GitHub account.
-   - Select your repository: **`mathavanwork18-tech` / `portfolio 4`**.
+2. **Connect to Netlify**:
+   - Go to **[app.netlify.com](https://app.netlify.com)** and log in with your GitHub account.
+   - Click **Add new site** → **Import an existing project**.
+   - Choose **GitHub** and authorize Netlify.
+   - Select your repository: **`mathavanwork18-tech/portfolio`**.
 
 3. **Deploy**:
-   - Vercel automatically detects **Vite**:
-     - **Framework Preset**: `Vite`
-     - **Build Command**: `npm run build`
-     - **Output Directory**: `dist`
-   - Click **Deploy**! Your site will be live in ~30 seconds with a free `.vercel.app` domain (e.g. `https://mathavan-portfolio.vercel.app`).
+   - Netlify will automatically detect `netlify.toml`:
+     - **Build command**: `npm run build`
+     - **Publish directory**: `dist`
+   - Click **Deploy portfolio**!
 
 ---
 
-## 💻 Option 2: Deploy via Terminal (Vercel CLI)
+## 💻 Option 3: Deploy via Terminal (Netlify CLI)
 
-Run the following command in your PowerShell terminal inside the portfolio folder:
+Run the following command in PowerShell inside your portfolio directory:
 
 ```powershell
-npx vercel
+npx netlify-cli deploy --prod
 ```
 
-- Follow the interactive prompt:
-  - **Set up and deploy?**: `y`
-  - **Which scope?**: Choose your Vercel account
-  - **Link to existing project?**: `n`
-  - **Project name?**: `mathavan-portfolio`
-  - **In which directory is your code located?**: `./`
-
-To deploy to production immediately:
-```powershell
-npx vercel --prod
-```
+- Follow the prompt to authorize in the browser.
+- Select **Create & configure a new site**.
+- Enter site name (e.g. `mathavan-portfolio`).
+- Set publish directory to **`dist`**.
 
 ---
 
-## ✅ Configuration Included:
-- **`vercel.json`**: Client-side routing fallback configuration (`/index.html`).
-- **Static Assets**: High-resolution suit photo, custom MS logo, and resume PDF served from `/public`.
+## ✅ Netlify Setup Included:
+- **`netlify.toml`**: Configures build command (`npm run build`), publish directory (`dist`), and SPA redirects (`/*` to `/index.html`).
+- **`public/_redirects`**: Ensures deep link routing fallback for single page React navigation.
+- **Static Assets**: All public images, resume, and logos served directly from `/dist`.
