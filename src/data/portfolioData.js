@@ -202,6 +202,15 @@ export const codingProfiles = [
     bg: "rgba(59,130,246,0.08)",
     stat: "Professional Network",
   },
+  {
+    name: "HackerRank",
+    handle: "@mathavan_work18",
+    iconType: "cpu",
+    url: "https://www.hackerrank.com/profile/mathavan_work18",
+    color: "#00ea64",
+    bg: "rgba(0,234,100,0.08)",
+    stat: "Coding Assessments",
+  },
 ];
 
 export const articles = [
