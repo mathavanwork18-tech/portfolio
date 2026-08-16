@@ -202,15 +202,6 @@ export const codingProfiles = [
     bg: "rgba(59,130,246,0.08)",
     stat: "Professional Network",
   },
-  {
-    name: "SkillRack",
-    handle: "@mathavan",
-    iconType: "terminal",
-    url: "https://skillrack.com/",
-    color: "#10b981",
-    bg: "rgba(16,185,129,0.08)",
-    stat: "Programming Challenges",
-  },
 ];
 
 export const articles = [
