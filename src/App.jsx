@@ -14,7 +14,6 @@ import Articles from './components/Articles';
 import CodingProfiles from './components/CodingProfiles';
 import Footer from './components/Footer';
 import WhatsAppWidget from './components/WhatsAppWidget';
-import BackgroundMusic from './components/BackgroundMusic';
 
 export default function App() {
   const [cursorPos, setCursorPos] = useState({ x: -500, y: -500 });
@@ -107,9 +106,6 @@ export default function App() {
           <Footer />
         </motion.div>
       </main>
-
-      {/* Floating Ambient Music Player */}
-      <BackgroundMusic />
 
       {/* Floating WhatsApp Widget */}
       <WhatsAppWidget />
