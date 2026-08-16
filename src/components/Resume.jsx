@@ -95,25 +95,6 @@ export default function Resume() {
           </div>
 
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
-            <motion.button
-              className="btn-primary"
-              onClick={handleDownload}
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.97 }}
-            >
-              <AnimatePresence mode="wait">
-                {downloaded ? (
-                  <motion.span key="check" initial={{ opacity: 0, scale: 0.5 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }} style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                    <CheckIcon /> Downloaded!
-                  </motion.span>
-                ) : (
-                  <motion.span key="download" initial={{ opacity: 0 }} animate={{ opacity: 1 }} style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                    <DownloadIcon /> Download Resume
-                  </motion.span>
-                )}
-              </AnimatePresence>
-            </motion.button>
-
             <button className="btn-outline" onClick={() => setModalOpen(true)} style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
               <EyeIcon /> Fullscreen View
             </button>
@@ -223,7 +204,6 @@ export default function Resume() {
             onClick={() => setModalOpen(false)}
           >
             <div style={{ position: 'absolute', top: 20, right: 24, display: 'flex', gap: 10, zIndex: 10001 }} onClick={e => e.stopPropagation()}>
-              <button className="btn-primary" onClick={handleDownload}><DownloadIcon /> Download</button>
               <button className="btn-outline" onClick={() => setModalOpen(false)}><CloseIcon /> Close</button>
             </div>
             <div style={{ maxWidth: '90vw', maxHeight: '85vh', overflow: 'auto', borderRadius: 'var(--radius-lg)' }} onClick={e => e.stopPropagation()}>
