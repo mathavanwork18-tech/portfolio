@@ -1,0 +1,93 @@
+# PORTFOLIO WEBSITE — BUILD SPEC
+
+## Identity & Content Source
+Build this for: Mathavan S — Information Technology Engineering student, Suguna College of 
+Engineering, Coimbatore. Department Vice President, IT. Currently building "Green Loop / EcoGo" 
+— a full-stack MERN e-waste management platform for Coimbatore/Tiruppur.
+
+[PASTE FULL LINKEDIN CONTENT HERE: About summary, Experience entries, Education, Skills list, 
+Certifications, Featured projects. Use this verbatim for all copy — do not invent placeholder 
+bios, fake job titles, or generic "Lorem ipsum" achievements.]
+
+## Tech Stack
+- React.js (Vite, functional components + hooks)
+- Framer Motion — page transitions, entrance animations, gesture-based hover states
+- Three.js (via React Three Fiber + Drei) — 3D icons, hover-interactive project cards
+- Particles.js (or tsParticles) — mouse-reactive background particles
+- Tailwind CSS — utility styling, dark theme as default (no light mode toggle needed)
+- React Router — page-level routing with animated route transitions
+- EmailJS or a serverless form handler — Contact page submission (no backend required)
+
+## Global Architecture
+- Single-page-app feel: each "page" below is a route, but navigation between them uses full-page 
+  AnimatePresence transitions (not hard reloads) — wipe, slide, morph, or particle-dissolve, 
+  a DIFFERENT signature transition per route so each section feels distinct.
+- Persistent nav (fixed sidebar or top bar) with active-route indicator; collapses to a bottom 
+  tab bar or hamburger on mobile.
+- Global animated gradient-blur blob background, layered behind Particles.js, both stay mounted 
+  across route changes so the transition doesn't feel like a reset.
+- Performance: lazy-load Three.js scenes and route bundles with React.lazy/Suspense; reduce 
+  particle count and disable heavy 3D on mobile viewport widths (<768px) using a device check.
+- Respect prefers-reduced-motion — provide a reduced-animation fallback, don't just ignore it.
+
+## Pages
+
+### 1. Hero + About
+- Full-viewport hero: name, role tagline, animated intro text (staggered word/letter reveal via 
+  Framer Motion), particles background reacting to cursor movement.
+- 2-3 floating Three.js 3D icons (tech stack icons or abstract geometry) with idle rotation + 
+  parallax on mouse move.
+- About block beneath/beside hero: intro paragraph, profession line, 3-4 achievement stats 
+  (counters that animate on scroll into view), sourced from LinkedIn About section.
+
+### 2. Call to Action
+- Centered "Hire Me" / "Let's Talk" button: glow pulse on idle, motion-blur streak + scale on 
+  hover, ripple on click, routes to Contact page.
+- Secondary line pulling from LinkedIn headline (current role/status).
+
+### 3. Resume
+- Resume preview card (thumbnail or icon) with a "Download PDF" button — icon morphs (download → 
+  checkmark) on click, subtle paper-fold or slide-out animation on hover.
+- Link target: /resume.pdf (placeholder path — swap in actual file).
+
+### 4. Projects
+- Responsive grid (3-col desktop, 1-col mobile) or horizontal carousel.
+- Each card: 3D tilt-on-hover (React Three Fiber or CSS 3D transform + Framer Motion drag values), 
+  lazy-loaded thumbnail, title, 1-line description, tech tags, links to live demo/GitHub.
+- Seed with real projects: Green Loop/EcoGo (MERN e-waste platform), ChatFlow (real-time chat app), 
+  WhatsApp Notification Intelligence Platform (FastAPI/Gemini), Bridging the Learning Divide 
+  (AI education platform), plus any others from LinkedIn Featured section.
+
+### 5. Skills
+- Grouped by category (Languages, Frameworks, Tools) with animated icons.
+- Proficiency shown via animated progress bars OR radial counters, triggered on scroll-into-view, 
+  values pulled from LinkedIn Skills section — don't guess percentages, ask if not listed.
+
+### 6. Contact
+- Form fields: name, email, message, with inline validation (required, email format) and shake 
+  animation on error.
+- On successful submit: button morphs into an animated checkmark/confetti burst, success toast.
+- Wire to EmailJS or a simple serverless function — flag this as a config step since it needs an 
+  API key.
+
+### 7. Featured Articles
+- List/grid of articles or blog posts (pull from LinkedIn Articles/Activity if present, else mark 
+  as "coming soon" placeholder section — don't fabricate article titles).
+- Fade + slide load-in, staggered per card.
+
+### 8. Coding Profiles
+- Cards linking to LeetCode, GitHub, SkillRack, HackerRank etc. — each with platform icon, handle, 
+  and a stat if available (e.g. problems solved, repo count).
+- Pop-in entrance (scale + fade), lift-and-glow on hover.
+
+### 9. Social Links
+- Fixed corner or footer icon row: LinkedIn, GitHub, Instagram, YouTube, Twitter/X.
+- Each icon: color-fill or rotate animation on hover, opens in new tab.
+
+## Non-negotiables
+- No placeholder "Lorem ipsum" or invented credentials anywhere — every content block traces to 
+  real LinkedIn/project data provided above. If a section has no source data, leave a clearly 
+  marked TODO instead of inventing content.
+- Every animation must have a purpose (entrance, feedback, or wayfinding) — no motion for 
+  motion's sake that hurts load time or readability.
+- Fully responsive: test breakpoints at 375px, 768px, 1024px, 1440px.
