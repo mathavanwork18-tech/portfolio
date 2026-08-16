@@ -34,7 +34,7 @@ export default function Timeline() {
           </p>
         </motion.div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 50, marginTop: 36, alignItems: 'start' }}>
+        <div className="timeline-grid">
           {/* Vertical Timeline */}
           <div className="timeline">
             {timeline.map((item, i) => (

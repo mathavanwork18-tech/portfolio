@@ -87,7 +87,7 @@ export default function Contact() {
           transition={{ duration: 0.8, delay: 0.12 }}
         >
           <div className="contact-grid">
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
+            <div className="contact-cards-grid">
               {CONTACT_CARDS.map((card, i) => (
                 <motion.a
                   key={card.label}
