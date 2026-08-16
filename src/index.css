@@ -1,3 +1,34 @@
+/* ============================================
+   CRITICAL: Fix Horizontal Overflow & Blue Line
+   ============================================ */
+html, body {
+  width: 100%;
+  overflow-x: hidden !important;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  max-width: 100%;
+}
+
+.hero, .contact, .timeline, .education, .projects, section, main {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+  html, body {
+    width: 100vw;
+    overflow-x: hidden !important;
+  }
+  
+  * {
+    max-width: 100vw !important;
+  }
+}
+
 /* ═══════════════════════════════════════════════════════════════════
    MATHAVAN S — PRODUCTION AUTOMATIC RESPONSIVE DESIGN SYSTEM
    Version 4.0 | Plus Jakarta Sans × Inter × Fluid Layout Math
