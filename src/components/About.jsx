@@ -32,7 +32,7 @@ export default function About() {
           </p>
         </motion.div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0,2fr) minmax(0,1fr)', gap: 36, marginTop: 24 }}>
+        <div className="about-grid">
           {/* Bio Glass Card */}
           <motion.div
             variants={fadeUp}
@@ -40,7 +40,7 @@ export default function About() {
             animate={inView ? 'visible' : 'hidden'}
             transition={{ delay: 0.1 }}
           >
-            <div className="glass-card" style={{ padding: 36 }}>
+            <div className="glass-card" style={{ padding: 'clamp(20px, 3.5vw, 36px)' }}>
               <p style={{ fontSize: '1.02rem', lineHeight: 1.85, color: 'var(--text-secondary)', marginBottom: 24 }}>
                 {personal.about}
               </p>
@@ -89,7 +89,7 @@ export default function About() {
 
         {/* Highlight Cards */}
         <motion.div
-          style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(210px, 1fr))', gap: 16, marginTop: 28 }}
+          className="about-highlights-grid"
           variants={fadeUp}
           initial="hidden"
           animate={inView ? 'visible' : 'hidden'}
