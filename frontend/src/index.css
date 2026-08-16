@@ -630,12 +630,85 @@ h1, h2, h3, h4, h5, h6 {
   grid-template-columns: 2fr 1fr;
   gap: 32px;
   margin-top: 24px;
+  width: 100%;
+}
+
+.bio-card {
+  padding: clamp(20px, 3.5vw, 36px);
+  width: 100%;
+}
+
+.about-paragraph {
+  font-size: clamp(0.96rem, 1.5vw, 1.05rem);
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+  letter-spacing: normal;
+  word-spacing: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.bio-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
 .about-sidebar {
   display: flex;
   flex-direction: column;
   gap: 14px;
+  width: 100%;
+}
+
+.info-item-card {
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.info-card-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.info-card-label {
+  font-size: 0.8rem;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.info-card-right {
+  text-align: right;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.info-card-value {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.info-card-sub {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.info-card-link {
+  color: var(--cyan);
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  word-break: break-all;
 }
 
 .about-highlights-grid {
@@ -643,6 +716,35 @@ h1, h2, h3, h4, h5, h6 {
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 16px;
   margin-top: 28px;
+  width: 100%;
+}
+
+.highlight-card {
+  padding: 22px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.highlight-icon-wrap {
+  margin-bottom: 12px;
+  padding: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.highlight-title {
+  font-weight: 700;
+  font-size: 0.92rem;
+  margin-bottom: 4px;
+  color: var(--text-primary);
+}
+
+.highlight-desc {
+  font-size: 0.78rem;
+  color: var(--text-muted);
 }
 
 /* ══════════════════════════════
@@ -960,11 +1062,20 @@ img, svg, canvas, video {
   .stat-label { font-size: 0.62rem; }
   .btn-primary, .btn-outline, .btn-whatsapp { font-size: 0.88rem; padding: 12px 16px; min-height: 44px; }
   .glass-card { border-radius: var(--radius-md); }
-  .about-paragraph { font-size: clamp(0.92rem, 3.8vw, 1rem) !important; line-height: 1.7 !important; }
-  .info-item-card { padding: 12px 14px !important; }
+  .bio-card { padding: 18px 14px !important; }
+  .about-paragraph { font-size: clamp(0.92rem, 3.8vw, 1rem) !important; line-height: 1.7 !important; margin-bottom: 18px !important; }
+  .info-item-card { padding: 12px 14px !important; flex-wrap: wrap; }
+  .info-card-label { font-size: 0.74rem !important; }
+  .info-card-value, .info-card-link { font-size: 0.82rem !important; }
   .resume-preview { padding: 16px 12px !important; }
   .contact-glass-wrap { padding: 18px 12px !important; }
   .cta-glass-card { padding: 28px 14px !important; }
+}
+
+/* Aspect-Ratio & Narrow Viewport Adaptation (Tall mobile ratios: 19.5:9, 20:9) */
+@media (max-width: 480px) and (min-aspect-ratio: 1/2) {
+  .section { padding: clamp(35px, 5vh, 55px) 0; }
+  .info-card-right { text-align: right; }
 }
 
 /* Motion Sensitivity */

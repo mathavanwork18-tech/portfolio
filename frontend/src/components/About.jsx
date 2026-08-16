@@ -39,12 +39,13 @@ export default function About() {
             initial="hidden"
             animate={inView ? 'visible' : 'hidden'}
             transition={{ delay: 0.1 }}
+            style={{ width: '100%' }}
           >
-            <div className="glass-card" style={{ padding: 'clamp(20px, 3.5vw, 36px)' }}>
-              <p style={{ fontSize: '1.02rem', lineHeight: 1.85, color: 'var(--text-secondary)', marginBottom: 24 }}>
+            <div className="glass-card bio-card">
+              <p className="about-paragraph">
                 {personal.about}
               </p>
-              <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+              <div className="bio-tags">
                 {['Python', 'AI & ML', 'MERN Stack', 'Vibe Coding', 'UI/UX Design', 'Department Leadership'].map(tag => (
                   <span key={tag} className="tag tag-cyan">{tag}</span>
                 ))}
@@ -58,7 +59,7 @@ export default function About() {
             initial="hidden"
             animate={inView ? 'visible' : 'hidden'}
             transition={{ delay: 0.2 }}
-            style={{ display: 'flex', flexDirection: 'column', gap: 14 }}
+            className="about-sidebar"
           >
             {[
               { label: 'Degree', value: 'B.Tech – IT', sub: '2024–2028', icon: <AcademicIcon size={16} color="var(--cyan)" /> },
@@ -67,18 +68,18 @@ export default function About() {
               { label: 'Location', value: 'Coimbatore', sub: 'Tamil Nadu', icon: <MapPinIcon size={16} color="var(--emerald)" /> },
               { label: 'Email', value: 'mathavan.work18', sub: '@gmail.com', link: personal.socials.email, icon: <MailIcon size={16} color="var(--cyan)" /> },
             ].map((item) => (
-              <div key={item.label} className="glass-card" style={{ padding: '16px 20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+              <div key={item.label} className="glass-card info-item-card">
+                <div className="info-card-left">
                   {item.icon}
-                  <span style={{ fontSize: '0.78rem', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)' }}>{item.label}</span>
+                  <span className="info-card-label">{item.label}</span>
                 </div>
-                <div style={{ textAlign: 'right' }}>
+                <div className="info-card-right">
                   {item.link ? (
-                    <a href={item.link} style={{ color: 'var(--cyan)', fontSize: '0.88rem', fontWeight: 600, textDecoration: 'none' }}>{item.value}{item.sub}</a>
+                    <a href={item.link} className="info-card-link">{item.value}{item.sub}</a>
                   ) : (
                     <>
-                      <div style={{ fontSize: '0.88rem', fontWeight: 600, color: 'var(--text-primary)' }}>{item.value}</div>
-                      <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>{item.sub}</div>
+                      <div className="info-card-value">{item.value}</div>
+                      <div className="info-card-sub">{item.sub}</div>
                     </>
                   )}
                 </div>
@@ -101,10 +102,10 @@ export default function About() {
             { icon: <RecycleIcon size={26} color="var(--emerald)" />, title: 'E-Waste Advocate', desc: 'Built Green Loop for e-waste disposal' },
             { icon: <PaletteIcon size={26} color="#f97316" />, title: 'Graphic Designer', desc: 'Master Cert – World Multimedia Assoc.' },
           ].map((fact) => (
-            <div key={fact.title} className="glass-card" style={{ padding: 22, textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <div style={{ marginBottom: 12, padding: 10, borderRadius: '50%', background: 'rgba(255,255,255,0.03)' }}>{fact.icon}</div>
-              <div style={{ fontWeight: 700, fontSize: '0.92rem', marginBottom: 4 }}>{fact.title}</div>
-              <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>{fact.desc}</div>
+            <div key={fact.title} className="glass-card highlight-card">
+              <div className="highlight-icon-wrap">{fact.icon}</div>
+              <div className="highlight-title">{fact.title}</div>
+              <div className="highlight-desc">{fact.desc}</div>
             </div>
           ))}
         </motion.div>
