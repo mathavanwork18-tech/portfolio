@@ -26,6 +26,8 @@ export function Hero() {
     <section className="hero-section" id="hero">
       <div className="container">
         <div className="hero-grid">
+
+          {/* ── 1. Hero Text Content ── */}
           <motion.div
             className="hero-text"
             variants={containerVariants}
@@ -64,7 +66,7 @@ export function Hero() {
               </div>
             </motion.div>
 
-            {/* Action Buttons */}
+            {/* Action CTAs */}
             <motion.div className="hero-actions" variants={itemVariants}>
               <button
                 className="btn-primary"
@@ -103,12 +105,13 @@ export function Hero() {
             </motion.div>
           </motion.div>
 
-          {/* Hero Portrait Photo - NO LAYOUT ANIMATION */}
+          {/* ── 2. Mathavan's Portrait Photo Card (Stacked sequentially below on mobile) ── */}
           <motion.div
             className="hero-portrait-col"
             variants={containerVariants}
             animate="visible"
             initial="hidden"
+            style={{ width: '100%', maxWidth: 360, margin: '0 auto' }}
           >
             <div
               className="glass-card"
@@ -118,14 +121,16 @@ export function Hero() {
                 padding: 14,
                 boxShadow: '0 25px 70px rgba(0, 0, 0, 0.5), 0 0 40px rgba(0, 212, 236, 0.15)',
                 border: '1px solid rgba(0, 212, 236, 0.25)',
-                position: 'relative',
+                width: '100%',
               }}
             >
+              {/* Photo Container */}
               <div
                 style={{
                   borderRadius: 'var(--radius-lg)',
                   overflow: 'hidden',
                   position: 'relative',
+                  width: '100%',
                   aspectRatio: '1 / 1',
                   background: 'linear-gradient(135deg, var(--bg-tertiary), var(--bg-primary))',
                 }}
@@ -141,56 +146,50 @@ export function Hero() {
                     display: 'block',
                   }}
                 />
+              </div>
 
-                <div
-                  style={{
-                    position: 'absolute',
-                    inset: 0,
-                    background: 'linear-gradient(to top, rgba(5, 8, 17, 0.85) 0%, transparent 60%)',
-                    pointerEvents: 'none',
-                  }}
-                />
+              {/* Status & Logo Footer Bar Below Photo (100% visible, no image overlap) */}
+              <div
+                style={{
+                  marginTop: 12,
+                  background: 'rgba(5, 8, 17, 0.85)',
+                  border: '1px solid rgba(255, 255, 255, 0.1)',
+                  borderRadius: 'var(--radius-md)',
+                  padding: '10px 14px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  width: '100%',
+                  boxSizing: 'border-box',
+                }}
+              >
+                <div style={{ display: 'flex', alignItems: 'center', gap: 10, flexShrink: 0 }}>
+                  <div
+                    style={{
+                      width: 32,
+                      height: 32,
+                      borderRadius: '50%',
+                      overflow: 'hidden',
+                      border: '1.5px solid var(--cyan)',
+                      flexShrink: 0,
+                      boxShadow: '0 0 10px rgba(0, 212, 236, 0.3)',
+                    }}
+                  >
+                    <img src="/portfolio_logo.jpg" alt="Mathavan Logo" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                  </div>
+                  <span style={{ fontWeight: 800, fontSize: '0.92rem', color: '#ffffff', fontFamily: 'var(--font-heading)' }}>
+                    Mathavan S.
+                  </span>
+                </div>
 
-                <div
-                  style={{
-                    position: 'absolute',
-                    bottom: 16,
-                    left: 16,
-                    right: 16,
-                    background: 'rgba(5, 8, 17, 0.82)',
-                    backdropFilter: 'blur(12px)',
-                    border: '1px solid rgba(255, 255, 255, 0.12)',
-                    borderRadius: 'var(--radius-md)',
-                    padding: '12px 16px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                  }}
-                >
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-                    <div
-                      style={{
-                        width: 28,
-                        height: 28,
-                        borderRadius: '50%',
-                        overflow: 'hidden',
-                        border: '1px solid var(--cyan)',
-                      }}
-                    >
-                      <img src="/portfolio_logo.jpg" alt="Logo" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                    </div>
-                    <div style={{ fontWeight: 800, fontSize: '0.95rem', color: '#ffffff', fontFamily: 'var(--font-heading)' }}>
-                      Mathavan S.
-                    </div>
-                  </div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: '0.72rem', color: 'var(--emerald)', fontFamily: 'var(--font-mono)' }}>
-                    <span style={{ width: 8, height: 8, borderRadius: '50%', background: 'var(--emerald)', boxShadow: '0 0 8px var(--emerald)' }} />
-                    Active
-                  </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: '0.72rem', color: 'var(--emerald)', fontFamily: 'var(--font-mono)', flexShrink: 0 }}>
+                  <span style={{ width: 8, height: 8, borderRadius: '50%', background: 'var(--emerald)', boxShadow: '0 0 8px var(--emerald)' }} />
+                  Active
                 </div>
               </div>
             </div>
           </motion.div>
+
         </div>
       </div>
     </section>
