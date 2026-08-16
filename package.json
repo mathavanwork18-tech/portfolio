@@ -9,18 +9,19 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "framer-motion": "^11.3.28",
-    "three": "^0.168.0",
-    "@react-three/fiber": "^8.17.5",
     "@react-three/drei": "^9.111.4",
-    "tsparticles": "^3.5.0",
+    "@react-three/fiber": "^8.17.5",
     "@tsparticles/react": "^3.0.0",
     "@tsparticles/slim": "^3.5.0",
-    "react-router-dom": "^6.26.0",
+    "framer-motion": "^11.3.28",
+    "lucide-react": "^0.441.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-intersection-observer": "^9.13.0",
-    "lucide-react": "^0.441.0"
+    "react-responsive": "^10.0.1",
+    "react-router-dom": "^6.26.0",
+    "three": "^0.168.0",
+    "tsparticles": "^3.5.0"
   },
   "devDependencies": {
     "@types/react": "^18.3.5",
