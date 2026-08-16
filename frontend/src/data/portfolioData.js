@@ -15,7 +15,9 @@ export const personal = {
     github: "https://github.com/mathavanwork18-tech",
     whatsapp: "https://wa.me/918072456474",
     email: "mailto:mathavan.work18@gmail.com",
+    website: "https://mathavanportfolioofficial.netlify.app/",
   },
+  officialUrl: "https://mathavanportfolioofficial.netlify.app/",
 };
 
 export const stats = [
@@ -201,15 +203,6 @@ export const codingProfiles = [
     stat: "Professional Network",
   },
   {
-    name: "LeetCode",
-    handle: "@mathavan_s",
-    iconType: "code",
-    url: "https://leetcode.com/",
-    color: "#ffa116",
-    bg: "rgba(255,161,22,0.08)",
-    stat: "DSA Practice",
-  },
-  {
     name: "SkillRack",
     handle: "@mathavan",
     iconType: "terminal",
@@ -217,15 +210,6 @@ export const codingProfiles = [
     color: "#10b981",
     bg: "rgba(16,185,129,0.08)",
     stat: "Programming Challenges",
-  },
-  {
-    name: "HackerRank",
-    handle: "@mathavan_s",
-    iconType: "cpu",
-    url: "https://hackerrank.com/",
-    color: "#00ea64",
-    bg: "rgba(0,234,100,0.08)",
-    stat: "Coding Assessments",
   },
 ];
 
