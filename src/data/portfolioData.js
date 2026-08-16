@@ -15,7 +15,9 @@ export const personal = {
     github: "https://github.com/mathavanwork18-tech",
     whatsapp: "https://wa.me/918072456474",
     email: "mailto:mathavan.work18@gmail.com",
+    website: "https://mathavanportfolioofficial.netlify.app/",
   },
+  officialUrl: "https://mathavanportfolioofficial.netlify.app/",
 };
 
 export const stats = [
