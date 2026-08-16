@@ -61,18 +61,26 @@
 }
 
 /* ══════════════════════════════
-   RESET & STRICT RESPONSIVE BASE
+   CRITICAL RESET & ZERO HORIZONTAL OVERFLOW SYSTEM
 ══════════════════════════════ */
 *, *::before, *::after {
-  margin: 0; padding: 0;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
+  max-width: 100%;
+}
+
+html, body {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden !important;
+  margin: 0;
+  padding: 0;
 }
 
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
   font-size: 16px;
-  width: 100%;
 }
 
 body {
@@ -83,13 +91,29 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;
-  width: 100%;
-  overflow-x: hidden;
   position: relative;
 }
 
-#root {
+body, main, section, div, #root {
+  overflow-x: hidden;
+}
+
+/* Hide horizontal scrollbar completely */
+::-webkit-scrollbar-horizontal {
+  display: none !important;
+}
+
+/* Fix for containers that might overflow */
+.container,
+.hero-section,
+.about-section,
+.contact,
+.timeline,
+.projects,
+.skills,
+.section {
   width: 100%;
+  max-width: 100%;
   overflow-x: hidden;
 }
 
